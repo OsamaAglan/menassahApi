@@ -1,6 +1,44 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+﻿## Build results
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
 
+## VS user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Visual Studio Code
+.vscode/
+
+## Others
+*.log
+*.tmp
+*.bak
+
+# Backup & temp files
+~$*
+*.tmp
+*.bak
+
+## NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+## ReSharper / Rider
+.idea/
+*.DotSettings.user
+
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## Git folder
+.git/
 /.vs/MenassahApi/CopilotIndices/17.14.719.50355
-*.vsidx
+/.vs/MenassahApi/FileContentIndex
