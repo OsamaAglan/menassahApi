@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MenassahApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ea444cc9685f7c92efd81beb8cbd1fe9d8e5b5d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MenassahApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MenassahApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
