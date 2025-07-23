@@ -9,7 +9,7 @@ using System.Data;
 namespace Menassah
 
 {
-    [AuthorizeToken]
+    //[AuthorizeToken]
     [Route("api/[controller]")]
     [ApiController]
     public class DashboardController : ControllerBase

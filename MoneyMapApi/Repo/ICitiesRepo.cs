@@ -10,7 +10,6 @@ namespace MenassahApi.Repo
         public string Insert(CitiesDL IM2OrdersDL);
         public string Update(CitiesDL IM2OrdersDL);
         public string Delete(int CityID);
-        public DataSet Login(CitiesDL IM2OrdersDL);
         public DataSet GetAll();
         public DataSet GetByID(int TypeID);
 

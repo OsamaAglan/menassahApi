@@ -1,5 +1,79 @@
 [
   {
+    "ContainingType": "Menassah.CitiesController",
+    "Method": "Delete",
+    "RelativePath": "api/Cities/Delete/{CityID}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CityID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.CitiesController",
+    "Method": "GetAll",
+    "RelativePath": "api/Cities/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.CitiesController",
+    "Method": "GetByID",
+    "RelativePath": "api/Cities/GetByID/{CityID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CityID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.CitiesController",
+    "Method": "Insert",
+    "RelativePath": "api/Cities/Insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CitiesDL",
+        "Type": "MenassahApi.DL.CitiesDL",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.CitiesController",
+    "Method": "Update",
+    "RelativePath": "api/Cities/Update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CitiesDL",
+        "Type": "MenassahApi.DL.CitiesDL",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Menassah.DashboardController",
     "Method": "GeneralStats",
     "RelativePath": "api/Dashboard/GeneralStats",
@@ -12,13 +86,13 @@
   {
     "ContainingType": "Menassah.RolesController",
     "Method": "Delete",
-    "RelativePath": "api/Roles/Delete/{RolesID}",
+    "RelativePath": "api/Roles/Delete/{RoleID}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "RolesID",
+        "Name": "RoleID",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -38,13 +112,13 @@
   {
     "ContainingType": "Menassah.RolesController",
     "Method": "GetByID",
-    "RelativePath": "api/Roles/GetByID/{RolesID}",
+    "RelativePath": "api/Roles/GetByID/{RoleID}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "RolesID",
+        "Name": "RoleID",
         "Type": "System.Int32",
         "IsRequired": true
       }

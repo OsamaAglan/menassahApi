@@ -9,6 +9,7 @@ using System.Data;
 namespace Menassah
 
 {
+    //[AuthorizeToken]
     [Route("api/[controller]")]
     [ApiController]
     public class RolesController : ControllerBase
@@ -108,13 +109,13 @@ namespace Menassah
         }
 
         [HttpDelete]
-        [Route("Delete/{RolesID}")]
-        public ActionResult Delete(int RolesID)
+        [Route("Delete/{RoleID}")]
+        public ActionResult Delete(int RoleID)
         {
             GeneralResponse resonse;
             try
             {
-                string x = _RolesRepo.Delete(RolesID);
+                string x = _RolesRepo.Delete(RoleID);
                 resonse = new GeneralResponse
                 {
                     ID = "",
@@ -154,15 +155,15 @@ namespace Menassah
 
     
         [HttpGet]
-        [Route("GetByID/{RolesID}")]
-        public IActionResult GetByID(int RolesID)
+        [Route("GetByID/{RoleID}")]
+        public IActionResult GetByID(int RoleID)
         {
             var request = Request; //Current
 
             string Language = "aa";
             //string Language = mainHelperRepo.GetLanguage(request);
 
-            DataSet ds = _RolesRepo.GetByID(RolesID);
+            DataSet ds = _RolesRepo.GetByID(RoleID);
             var resonse = new GeneralResponse
             {
                 ID = "",

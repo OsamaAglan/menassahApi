@@ -20,13 +20,8 @@ namespace Menassah.Shared
             SqlCommand cmd = GetCommand("spx_tbl_Users_Insert", CommandType.StoredProcedure);
 
             cmd.Parameters.Add(GetParameter("@UserName", UsersDL.UserName));
-            cmd.Parameters.Add(GetParameter("@LoginName", UsersDL.LoginName));
             cmd.Parameters.Add(GetParameter("@PasswordHash", UsersDL.PasswordHash));
-            cmd.Parameters.Add(GetParameter("@Email", UsersDL.Email));
-            cmd.Parameters.Add(GetParameter("@Gender", UsersDL.Gender));
-            cmd.Parameters.Add(GetParameter("@PhoneNumber", UsersDL.PhoneNumber));
-            cmd.Parameters.Add(GetParameter("@CityID", UsersDL.CityID));
-            cmd.Parameters.Add(GetParameter("@RoleID", UsersDL.RoleID));
+            cmd.Parameters.Add(GetParameter("@IsActive", UsersDL.IsActive));
 
 
             SqlParameter pID = GetParameterReturnValue("@NewID");
@@ -51,13 +46,8 @@ namespace Menassah.Shared
 
             cmd.Parameters.Add(GetParameter("@UserID", UsersDL.UserID));
             cmd.Parameters.Add(GetParameter("@UserName", UsersDL.UserName));
-            cmd.Parameters.Add(GetParameter("@LoginName", UsersDL.LoginName));
             cmd.Parameters.Add(GetParameter("@PasswordHash", UsersDL.PasswordHash));
-            cmd.Parameters.Add(GetParameter("@Email", UsersDL.Email));
-            cmd.Parameters.Add(GetParameter("@Gender", UsersDL.Gender));
-            cmd.Parameters.Add(GetParameter("@PhoneNumber", UsersDL.PhoneNumber));
-            cmd.Parameters.Add(GetParameter("@CityID", UsersDL.CityID));
-            cmd.Parameters.Add(GetParameter("@RoleID", UsersDL.RoleID));
+            cmd.Parameters.Add(GetParameter("@IsActive", UsersDL.IsActive));
 
             SqlParameter pID = GetParameterReturnValue("@NewID");
             cmd.Parameters.Add(pID);
@@ -110,8 +100,8 @@ namespace Menassah.Shared
 {
 
     SqlCommand cmd = GetCommand("spx_tbl_Users_Login", CommandType.StoredProcedure);
-    cmd.Parameters.Add(GetParameter("@LoginName", UsersDL.LoginName));
-    cmd.Parameters.Add(GetParameter("@PasswordHash", UsersDL.PasswordHash));
+            cmd.Parameters.Add(GetParameter("@UserName", UsersDL.UserName));
+            cmd.Parameters.Add(GetParameter("@PasswordHash", UsersDL.PasswordHash));
     var ds = GetDataSet(cmd, 999);
     return ds;
 

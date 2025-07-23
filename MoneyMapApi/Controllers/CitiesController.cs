@@ -12,13 +12,13 @@ namespace Menassah
     //[AuthorizeToken]
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class CitiesController : ControllerBase
     {
-        private readonly IUsersRepo _UsersRepo;
+        private readonly ICitiesRepo _CitiesRepo;
 
-        public UsersController(IUsersRepo Users, IMainHelper mainHelper)
+        public CitiesController(ICitiesRepo Cities, IMainHelper mainHelper)
         {
-            _UsersRepo = Users;
+            _CitiesRepo = Cities;
             mainHelperRepo = mainHelper;
         }
 
@@ -26,12 +26,12 @@ namespace Menassah
 
         [HttpPost]
         [Route("Insert")]
-        public ActionResult Insert(UsersDL UsersDL)
+        public ActionResult Insert(CitiesDL CitiesDL)
         {
             GeneralResponse resonse;
             try
             {
-                string ID = _UsersRepo.Insert(UsersDL);
+                string ID = _CitiesRepo.Insert(CitiesDL);
                 if (ID == "0")
                 {
                     resonse = new GeneralResponse
@@ -68,12 +68,12 @@ namespace Menassah
 
         [HttpPut]
         [Route("Update")]
-        public ActionResult Update(UsersDL UsersDL)
+        public ActionResult Update(CitiesDL CitiesDL)
         {
             GeneralResponse resonse;
             try
             {
-                string ID = _UsersRepo.Update(UsersDL);
+                string ID = _CitiesRepo.Update(CitiesDL);
                 if (ID == "0")
                 {
                     resonse = new GeneralResponse
@@ -109,13 +109,13 @@ namespace Menassah
         }
 
         [HttpDelete]
-        [Route("Delete/{UsersID}")]
-        public ActionResult Delete(int UsersID)
+        [Route("Delete/{CityID}")]
+        public ActionResult Delete(int CityID)
         {
             GeneralResponse resonse;
             try
             {
-                string x = _UsersRepo.Delete(UsersID);
+                string x = _CitiesRepo.Delete(CityID);
                 resonse = new GeneralResponse
                 {
                     ID = "",
@@ -141,7 +141,7 @@ namespace Menassah
             string Language = "aa";
             //string Language = mainHelperRepo.GetLanguage(request);
 
-            DataSet ds = _UsersRepo.GetAll();
+            DataSet ds = _CitiesRepo.GetAll();
             var resonse = new GeneralResponse
             {
                 ID = "",
@@ -153,37 +153,17 @@ namespace Menassah
             return Ok(resonse);
         }
 
-        [HttpPost]
-        [Route("Login")]
-        public IActionResult Login(UsersDL UsersDL)
-        {
-            var request = Request; //Current
-
-            string Language = "aa";
-            //string Language = mainHelperRepo.GetLanguage(request);
-
-            DataSet ds = _UsersRepo.Login(UsersDL);
-            var resonse = new GeneralResponse
-            {
-                ID = "",
-                Message = "",
-                Success = true,
-                Data = mainHelperRepo.Serialize(ds.Tables[0])
-            };
-
-            return Ok(resonse);
-        }
-
+    
         [HttpGet]
-        [Route("GetByID/{UsersID}")]
-        public IActionResult GetByID(int UsersID)
+        [Route("GetByID/{CityID}")]
+        public IActionResult GetByID(int CityID)
         {
             var request = Request; //Current
 
             string Language = "aa";
             //string Language = mainHelperRepo.GetLanguage(request);
 
-            DataSet ds = _UsersRepo.GetByID(UsersID);
+            DataSet ds = _CitiesRepo.GetByID(CityID);
             var resonse = new GeneralResponse
             {
                 ID = "",

@@ -5,6 +5,136 @@
     "version": "v1"
   },
   "paths": {
+    "/api/Cities/Insert": {
+      "post": {
+        "tags": [
+          "Cities"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitiesDL"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitiesDL"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitiesDL"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitiesDL"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cities/Update": {
+      "put": {
+        "tags": [
+          "Cities"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitiesDL"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitiesDL"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitiesDL"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitiesDL"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cities/Delete/{CityID}": {
+      "delete": {
+        "tags": [
+          "Cities"
+        ],
+        "parameters": [
+          {
+            "name": "CityID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cities/GetAll": {
+      "get": {
+        "tags": [
+          "Cities"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cities/GetByID/{CityID}": {
+      "get": {
+        "tags": [
+          "Cities"
+        ],
+        "parameters": [
+          {
+            "name": "CityID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Dashboard/GeneralStats": {
       "get": {
         "tags": [
@@ -89,14 +219,14 @@
         }
       }
     },
-    "/api/Roles/Delete/{RolesID}": {
+    "/api/Roles/Delete/{RoleID}": {
       "delete": {
         "tags": [
           "Roles"
         ],
         "parameters": [
           {
-            "name": "RolesID",
+            "name": "RoleID",
             "in": "path",
             "required": true,
             "schema": {
@@ -124,14 +254,14 @@
         }
       }
     },
-    "/api/Roles/GetByID/{RolesID}": {
+    "/api/Roles/GetByID/{RoleID}": {
       "get": {
         "tags": [
           "Roles"
         ],
         "parameters": [
           {
-            "name": "RolesID",
+            "name": "RoleID",
             "in": "path",
             "required": true,
             "schema": {
@@ -576,6 +706,20 @@
   },
   "components": {
     "schemas": {
+      "CitiesDL": {
+        "type": "object",
+        "properties": {
+          "cityID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cityName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "RolesDL": {
         "type": "object",
         "properties": {
@@ -597,18 +741,49 @@
             "type": "integer",
             "format": "int32"
           },
+          "studentName": {
+            "type": "string",
+            "nullable": true
+          },
           "gradeLevel": {
             "type": "string",
             "nullable": true
           },
           "guardianID": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
           },
           "notes": {
             "type": "string",
             "nullable": true
+          },
+          "userID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "cityID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -644,37 +819,12 @@
             "type": "string",
             "nullable": true
           },
-          "loginName": {
-            "type": "string",
-            "nullable": true
-          },
           "passwordHash": {
             "type": "string",
             "nullable": true
           },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "gender": {
-            "type": "string",
-            "nullable": true
-          },
-          "phoneNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "userAgent": {
-            "type": "string",
-            "nullable": true
-          },
-          "cityID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "roleID": {
-            "type": "integer",
-            "format": "int32"
+          "isActive": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

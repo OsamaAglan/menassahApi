@@ -114,3 +114,4 @@ D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\obj\Debug\net9.0\refint\MenassahApi
 D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\obj\Debug\net9.0\MenassahApi.pdb
 D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\obj\Debug\net9.0\MenassahApi.genruntimeconfig.cache
 D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\obj\Debug\net9.0\ref\MenassahApi.dll
+D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\obj\Debug\net9.0\MenassahApi.sourcelink.json
