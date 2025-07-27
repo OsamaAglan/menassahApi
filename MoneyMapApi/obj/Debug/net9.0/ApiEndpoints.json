@@ -306,6 +306,96 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Menassah.TeacherGroupsController",
+    "Method": "Delete",
+    "RelativePath": "api/TeacherGroups/Delete/{TeacherGroupID}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TeacherGroupID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherGroupsController",
+    "Method": "GetAll",
+    "RelativePath": "api/TeacherGroups/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherGroupsController",
+    "Method": "GetByID",
+    "RelativePath": "api/TeacherGroups/GetByID/{TeacherGroupID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TeacherGroupID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherGroupsController",
+    "Method": "GetByTeacherID",
+    "RelativePath": "api/TeacherGroups/GetByTeacherID/{TeacherID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TeacherID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherGroupsController",
+    "Method": "Insert",
+    "RelativePath": "api/TeacherGroups/Insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TeacherGroupsDL",
+        "Type": "MenassahApi.DL.TeacherGroupsDL",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherGroupsController",
+    "Method": "Update",
+    "RelativePath": "api/TeacherGroups/Update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TeacherGroupsDL",
+        "Type": "MenassahApi.DL.TeacherGroupsDL",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Menassah.TeachersController",
     "Method": "Delete",
     "RelativePath": "api/Teachers/Delete/{TeachersID}",

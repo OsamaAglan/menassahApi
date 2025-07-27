@@ -41,5 +41,5 @@ wwwroot\uploads\d5eb1073-8326-43c0-9d3b-b34254571c75_school_icon.png
 wwwroot\uploads\dd2a213b-13c9-44fe-8a39-db579eb27b82_POS - Osama Ajlan.pdf
 wwwroot\uploads\e02c29e6-0843-4814-8b8f-73b583e83694_script.html
 wwwroot\uploads\e5132276-f3b8-4fe7-97a1-f1c9a6ff426c_das11h.jpg
-D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\wwwroot\uploads\e02c29e6-0843-4814-8b8f-73b583e83694_script.html
 D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\wwwroot\uploads\a4af5406-8b53-4748-9d06-100750d9dc22_learn javascript.js
+D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\wwwroot\uploads\e02c29e6-0843-4814-8b8f-73b583e83694_script.html

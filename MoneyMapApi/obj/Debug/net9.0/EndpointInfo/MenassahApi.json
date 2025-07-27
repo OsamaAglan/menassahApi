@@ -537,6 +537,159 @@
         }
       }
     },
+    "/api/TeacherGroups/Insert": {
+      "post": {
+        "tags": [
+          "TeacherGroups"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGroupsDL"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGroupsDL"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGroupsDL"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGroupsDL"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherGroups/Update": {
+      "put": {
+        "tags": [
+          "TeacherGroups"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGroupsDL"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGroupsDL"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGroupsDL"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGroupsDL"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherGroups/Delete/{TeacherGroupID}": {
+      "delete": {
+        "tags": [
+          "TeacherGroups"
+        ],
+        "parameters": [
+          {
+            "name": "TeacherGroupID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherGroups/GetAll": {
+      "get": {
+        "tags": [
+          "TeacherGroups"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherGroups/GetByID/{TeacherGroupID}": {
+      "get": {
+        "tags": [
+          "TeacherGroups"
+        ],
+        "parameters": [
+          {
+            "name": "TeacherGroupID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherGroups/GetByTeacherID/{TeacherID}": {
+      "get": {
+        "tags": [
+          "TeacherGroups"
+        ],
+        "parameters": [
+          {
+            "name": "TeacherID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Teachers/Insert": {
       "post": {
         "tags": [
@@ -1215,10 +1368,10 @@
         },
         "additionalProperties": false
       },
-      "TeacherSubjectsDL": {
+      "TeacherGroupsDL": {
         "type": "object",
         "properties": {
-          "teacherSubjectID": {
+          "teacherGroupID": {
             "type": "integer",
             "format": "int32"
           },
@@ -1239,6 +1392,28 @@
             "format": "int32"
           },
           "term": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeacherSubjectsDL": {
+        "type": "object",
+        "properties": {
+          "teacherSubjectID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "teacherID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "subjectID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "gradeID": {
             "type": "integer",
             "format": "int32"
           }

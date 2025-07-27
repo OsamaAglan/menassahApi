@@ -15,13 +15,11 @@ namespace Menassah.Shared
 
         public string Insert(TeacherSubjectsDL TeacherSubjectsDL)
         {
-            SqlCommand cmd = GetCommand("spx_TeacherSubjects_Insert", CommandType.StoredProcedure);
+            SqlCommand cmd = GetCommand("spx_tbl_TeacherSubjects_Insert", CommandType.StoredProcedure);
 
-                         cmd.Parameters.Add(GetParameter("@GroupName", TeacherSubjectsDL.GroupName));
                          cmd.Parameters.Add(GetParameter("@TeacherID", TeacherSubjectsDL.TeacherID));
                          cmd.Parameters.Add(GetParameter("@SubjectID", TeacherSubjectsDL.SubjectID));
                          cmd.Parameters.Add(GetParameter("@GradeID", TeacherSubjectsDL.GradeID));
-                         cmd.Parameters.Add(GetParameter("@Term", TeacherSubjectsDL.Term));
 
         SqlParameter pID = GetParameterReturnValue("@NewID");
             cmd.Parameters.Add(pID);
@@ -41,14 +39,12 @@ namespace Menassah.Shared
         }
         public string Update(TeacherSubjectsDL TeacherSubjectsDL)
         {
-            SqlCommand cmd = GetCommand("spx_TeacherSubjects_Update", CommandType.StoredProcedure);
+            SqlCommand cmd = GetCommand("spx_tbl_TeacherSubjects_Update", CommandType.StoredProcedure);
 
             cmd.Parameters.Add(GetParameter("@TeacherSubjectID", TeacherSubjectsDL.TeacherSubjectID));
-            cmd.Parameters.Add(GetParameter("@GroupName", TeacherSubjectsDL.GroupName));
             cmd.Parameters.Add(GetParameter("@TeacherID", TeacherSubjectsDL.TeacherID));
             cmd.Parameters.Add(GetParameter("@SubjectID", TeacherSubjectsDL.SubjectID));
             cmd.Parameters.Add(GetParameter("@GradeID", TeacherSubjectsDL.GradeID));
-            cmd.Parameters.Add(GetParameter("@Term", TeacherSubjectsDL.Term));
 
 
             SqlParameter pID = GetParameterReturnValue("@NewID");
@@ -69,7 +65,7 @@ namespace Menassah.Shared
         }
         public string Delete(int TeacherSubjectID)
         {
-            SqlCommand cmd = GetCommand("spx_TeacherSubjects_Delete", CommandType.StoredProcedure);
+            SqlCommand cmd = GetCommand("spx_tbl_TeacherSubjects_Delete", CommandType.StoredProcedure);
 
             cmd.Parameters.Add(GetParameter("@TeacherSubjectID", TeacherSubjectID));
 
@@ -93,7 +89,7 @@ namespace Menassah.Shared
         public DataSet GetAll()
         {
 
-            SqlCommand cmd = GetCommand("spx_TeacherSubjects_GetAll", CommandType.StoredProcedure);
+            SqlCommand cmd = GetCommand("spx_tbl_TeacherSubjects_GetAll", CommandType.StoredProcedure);
             var ds = GetDataSet(cmd, 999);
             return ds;
 
@@ -110,7 +106,7 @@ namespace Menassah.Shared
         public DataSet GetByID(int TeacherSubjectID)
 {
 
-    SqlCommand cmd = GetCommand("spx_TeacherSubjects_GetByID", CommandType.StoredProcedure);
+    SqlCommand cmd = GetCommand("spx_tbl_TeacherSubjects_GetByID", CommandType.StoredProcedure);
     cmd.Parameters.Add(GetParameter("@TeacherSubjectID", TeacherSubjectID));
     var ds = GetDataSet(cmd, 999);
     return ds;
