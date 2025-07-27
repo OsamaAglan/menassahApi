@@ -407,6 +407,136 @@
         }
       }
     },
+    "/api/TeacherGrades/Insert": {
+      "post": {
+        "tags": [
+          "TeacherGrades"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGradesDL"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGradesDL"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGradesDL"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGradesDL"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherGrades/Update": {
+      "put": {
+        "tags": [
+          "TeacherGrades"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGradesDL"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGradesDL"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGradesDL"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherGradesDL"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherGrades/Delete/{TeacherGradeID}": {
+      "delete": {
+        "tags": [
+          "TeacherGrades"
+        ],
+        "parameters": [
+          {
+            "name": "TeacherGradeID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherGrades/GetAll": {
+      "get": {
+        "tags": [
+          "TeacherGrades"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherGrades/GetByID/{TeacherGradeID}": {
+      "get": {
+        "tags": [
+          "TeacherGrades"
+        ],
+        "parameters": [
+          {
+            "name": "TeacherGradeID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Teachers/Insert": {
       "post": {
         "tags": [
@@ -522,6 +652,159 @@
         "parameters": [
           {
             "name": "TeachersID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherSubjects/Insert": {
+      "post": {
+        "tags": [
+          "TeacherSubjects"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherSubjectsDL"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherSubjectsDL"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherSubjectsDL"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherSubjectsDL"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherSubjects/Update": {
+      "put": {
+        "tags": [
+          "TeacherSubjects"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherSubjectsDL"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherSubjectsDL"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherSubjectsDL"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherSubjectsDL"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherSubjects/Delete/{TeacherSubjectID}": {
+      "delete": {
+        "tags": [
+          "TeacherSubjects"
+        ],
+        "parameters": [
+          {
+            "name": "TeacherSubjectID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherSubjects/GetAll": {
+      "get": {
+        "tags": [
+          "TeacherSubjects"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherSubjects/GetByID/{TeacherSubjectID}": {
+      "get": {
+        "tags": [
+          "TeacherSubjects"
+        ],
+        "parameters": [
+          {
+            "name": "TeacherSubjectID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TeacherSubjects/GetByTeacherID/{TeacherID}": {
+      "get": {
+        "tags": [
+          "TeacherSubjects"
+        ],
+        "parameters": [
+          {
+            "name": "TeacherID",
             "in": "path",
             "required": true,
             "schema": {
@@ -899,10 +1182,6 @@
             "type": "string",
             "nullable": true
           },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
           "cityID": {
             "type": "integer",
             "format": "int32"
@@ -912,6 +1191,54 @@
             "nullable": true
           },
           "gender": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeacherGradesDL": {
+        "type": "object",
+        "properties": {
+          "teacherGradeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "teacherID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "gradeID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeacherSubjectsDL": {
+        "type": "object",
+        "properties": {
+          "teacherSubjectID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "groupName": {
+            "type": "string",
+            "nullable": true
+          },
+          "teacherID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "subjectID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "gradeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "term": {
             "type": "integer",
             "format": "int32"
           }
@@ -940,10 +1267,6 @@
           "email": {
             "type": "string",
             "nullable": true
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
           },
           "cityID": {
             "type": "integer",

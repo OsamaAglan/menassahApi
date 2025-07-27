@@ -74,6 +74,8 @@ builder.Services.AddScoped<IStudentsRepo, StudentsDAL>();
 builder.Services.AddScoped<IUserRolesRepo, UserRolesDAL>();
 builder.Services.AddScoped<ICitiesRepo, CitiesDAL>();
 builder.Services.AddScoped<ITeachersRepo, TeachersDAL>();
+builder.Services.AddScoped<ITeacherSubjectsRepo, TeacherSubjectsDAL>();
+builder.Services.AddScoped<ITeacherGradesRepo, TeacherGradesDAL>();
 
 
 

@@ -24,7 +24,6 @@ namespace Menassah.Shared
             cmd.Parameters.Add(GetParameter("@UserID", StudentsDL.UserID));
             cmd.Parameters.Add(GetParameter("@PhoneNumber", StudentsDL.PhoneNumber));
             cmd.Parameters.Add(GetParameter("@Email", StudentsDL.Email));
-            cmd.Parameters.Add(GetParameter("@CreatedAt", StudentsDL.CreatedAt));
             cmd.Parameters.Add(GetParameter("@CityID", StudentsDL.CityID));
             cmd.Parameters.Add(GetParameter("@Address", StudentsDL.Address));
             cmd.Parameters.Add(GetParameter("@Gender", StudentsDL.Gender));
@@ -58,7 +57,6 @@ namespace Menassah.Shared
             cmd.Parameters.Add(GetParameter("@UserID", StudentsDL.UserID));
             cmd.Parameters.Add(GetParameter("@PhoneNumber", StudentsDL.PhoneNumber));
             cmd.Parameters.Add(GetParameter("@Email", StudentsDL.Email));
-            cmd.Parameters.Add(GetParameter("@CreatedAt", StudentsDL.CreatedAt));
             cmd.Parameters.Add(GetParameter("@CityID", StudentsDL.CityID));
             cmd.Parameters.Add(GetParameter("@Address", StudentsDL.Address));
             cmd.Parameters.Add(GetParameter("@Gender", StudentsDL.Gender));

@@ -232,6 +232,80 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Menassah.TeacherGradesController",
+    "Method": "Delete",
+    "RelativePath": "api/TeacherGrades/Delete/{TeacherGradeID}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TeacherGradeID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherGradesController",
+    "Method": "GetAll",
+    "RelativePath": "api/TeacherGrades/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherGradesController",
+    "Method": "GetByID",
+    "RelativePath": "api/TeacherGrades/GetByID/{TeacherGradeID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TeacherGradeID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherGradesController",
+    "Method": "Insert",
+    "RelativePath": "api/TeacherGrades/Insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TeacherGradesDL",
+        "Type": "MenassahApi.DL.TeacherGradesDL",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherGradesController",
+    "Method": "Update",
+    "RelativePath": "api/TeacherGrades/Update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TeacherGradesDL",
+        "Type": "MenassahApi.DL.TeacherGradesDL",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Menassah.TeachersController",
     "Method": "Delete",
     "RelativePath": "api/Teachers/Delete/{TeachersID}",
@@ -300,6 +374,96 @@
       {
         "Name": "TeachersDL",
         "Type": "MenassahApi.DL.TeachersDL",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherSubjectsController",
+    "Method": "Delete",
+    "RelativePath": "api/TeacherSubjects/Delete/{TeacherSubjectID}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TeacherSubjectID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherSubjectsController",
+    "Method": "GetAll",
+    "RelativePath": "api/TeacherSubjects/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherSubjectsController",
+    "Method": "GetByID",
+    "RelativePath": "api/TeacherSubjects/GetByID/{TeacherSubjectID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TeacherSubjectID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherSubjectsController",
+    "Method": "GetByTeacherID",
+    "RelativePath": "api/TeacherSubjects/GetByTeacherID/{TeacherID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TeacherID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherSubjectsController",
+    "Method": "Insert",
+    "RelativePath": "api/TeacherSubjects/Insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TeacherSubjectsDL",
+        "Type": "MenassahApi.DL.TeacherSubjectsDL",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Menassah.TeacherSubjectsController",
+    "Method": "Update",
+    "RelativePath": "api/TeacherSubjects/Update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TeacherSubjectsDL",
+        "Type": "MenassahApi.DL.TeacherSubjectsDL",
         "IsRequired": true
       }
     ],
