@@ -107,7 +107,6 @@ D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\obj\Debug\net9.0\staticwebassets.bu
 D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\obj\Debug\net9.0\staticwebassets.build.json.cache
 D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\obj\Debug\net9.0\staticwebassets.development.json
 D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\obj\Debug\net9.0\Menassah.333FA335.Up2Date
 D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\obj\Debug\net9.0\MenassahApi.dll
 D:\Osama\Work\Code\Back\Menassah\MoneyMapApi\obj\Debug\net9.0\refint\MenassahApi.dll
