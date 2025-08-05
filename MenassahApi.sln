@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenassahApi", "MoneyMapApi\MenassahApi.csproj", "{556F3811-8927-9CE4-4FA8-1EEB319BF241}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenassahApi", "MenassahApi\MenassahApi.csproj", "{275FE361-D245-18B6-A0CE-889B3FA9AA4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{556F3811-8927-9CE4-4FA8-1EEB319BF241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{556F3811-8927-9CE4-4FA8-1EEB319BF241}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{556F3811-8927-9CE4-4FA8-1EEB319BF241}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{556F3811-8927-9CE4-4FA8-1EEB319BF241}.Release|Any CPU.Build.0 = Release|Any CPU
+		{275FE361-D245-18B6-A0CE-889B3FA9AA4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{275FE361-D245-18B6-A0CE-889B3FA9AA4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{275FE361-D245-18B6-A0CE-889B3FA9AA4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{275FE361-D245-18B6-A0CE-889B3FA9AA4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
