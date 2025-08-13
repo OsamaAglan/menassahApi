@@ -43,7 +43,7 @@ namespace Menassah.Shared
         {
             SqlCommand cmd = GetCommand("spx_tbl_TeacherGroups_Update", CommandType.StoredProcedure);
 
-            cmd.Parameters.Add(GetParameter("@TeacherSubjectID", TeacherGroupsDL.TeacherGroupID));
+            cmd.Parameters.Add(GetParameter("@TeacherGroupID", TeacherGroupsDL.TeacherGroupID));
             cmd.Parameters.Add(GetParameter("@GroupName", TeacherGroupsDL.GroupName));
             cmd.Parameters.Add(GetParameter("@TeacherID", TeacherGroupsDL.TeacherID));
             cmd.Parameters.Add(GetParameter("@SubjectID", TeacherGroupsDL.SubjectID));
@@ -107,6 +107,12 @@ namespace Menassah.Shared
     return ds;
 
 }
+
+
+
+
+
+
         public DataSet GetByID(int TeacherGroupID)
 {
 

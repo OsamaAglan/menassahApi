@@ -177,7 +177,7 @@ namespace Menassah
                 Data = new
                 {
                     Hdr = mainHelperRepo.Serialize(ds.Tables[0]),
-                    Messages = mainHelperRepo.Serialize(ds.Tables[1])
+                    Dtls = mainHelperRepo.Serialize(ds.Tables[1])
                 }
             };
 
