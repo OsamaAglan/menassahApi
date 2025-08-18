@@ -22,8 +22,12 @@ namespace Menassah.Shared
                          cmd.Parameters.Add(GetParameter("@SubjectID", TeacherGroupsDL.SubjectID));
                          cmd.Parameters.Add(GetParameter("@GradeID", TeacherGroupsDL.GradeID));
                          cmd.Parameters.Add(GetParameter("@Term", TeacherGroupsDL.Term));
+            cmd.Parameters.Add(GetParameter("@YoutubePlayListID", TeacherGroupsDL.YoutubePlayListID));
+            cmd.Parameters.Add(GetParameter("@DocsListPath", TeacherGroupsDL.DocsListPath));
+            cmd.Parameters.Add(GetParameter("@LocalVideosListPath", TeacherGroupsDL.LocalVideosListPath));
 
-        SqlParameter pID = GetParameterReturnValue("@NewID");
+
+            SqlParameter pID = GetParameterReturnValue("@NewID");
             cmd.Parameters.Add(pID);
 
             ExecuteNonQuery(cmd);
@@ -49,9 +53,12 @@ namespace Menassah.Shared
             cmd.Parameters.Add(GetParameter("@SubjectID", TeacherGroupsDL.SubjectID));
             cmd.Parameters.Add(GetParameter("@GradeID", TeacherGroupsDL.GradeID));
             cmd.Parameters.Add(GetParameter("@Term", TeacherGroupsDL.Term));
+                       cmd.Parameters.Add(GetParameter("@YoutubePlayListID", TeacherGroupsDL.YoutubePlayListID));
+ cmd.Parameters.Add(GetParameter("@DocsListPath", TeacherGroupsDL.DocsListPath));
+            cmd.Parameters.Add(GetParameter("@LocalVideosListPath", TeacherGroupsDL.LocalVideosListPath));
 
-
-            SqlParameter pID = GetParameterReturnValue("@NewID");
+           
+                    SqlParameter pID = GetParameterReturnValue("@NewID");
             cmd.Parameters.Add(pID);
 
             ExecuteNonQuery(cmd);
