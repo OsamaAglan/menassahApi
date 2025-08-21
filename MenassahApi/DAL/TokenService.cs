@@ -16,7 +16,9 @@ namespace Menassah.Shared
             _configuration = configuration;
         }
 
-        public string GenerateToken(int userId, string username, List<string> roles)
+        public string GenerateToken(int userId, string username, List<string> roles, int personID,
+                     string personName,
+                      string role)
         {
             var jwtSettings = _configuration.GetSection("JwtSettings");
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]!));
@@ -26,6 +28,11 @@ namespace Menassah.Shared
             {
                 new Claim(JwtRegisteredClaimNames.Sub, username),
                 new Claim("userId", userId.ToString()),
+
+                new Claim("personId", personID.ToString()),
+                new Claim("personName", personName),
+                new Claim("role", role),
+
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 

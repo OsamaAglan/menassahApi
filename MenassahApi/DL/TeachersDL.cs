@@ -9,7 +9,6 @@ namespace MenassahApi.DL
     {
         public int TeacherID { get; set; }
         public string TeacherName { get; set; }
-        public int UserID { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public int CityID { get; set; }
@@ -19,12 +18,10 @@ namespace MenassahApi.DL
                 public string Bio { get; set; }
                 public string ProfilePicture { get; set; }
 
-
-
-
     }
 
-}
+
+            }
 
 
     

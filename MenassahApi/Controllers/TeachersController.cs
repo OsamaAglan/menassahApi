@@ -28,6 +28,7 @@ namespace Menassah
 
         [HttpPost]
         [Route("Insert")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public ActionResult Insert(TeachersDL TeachersDL)
         {
             GeneralResponse resonse;

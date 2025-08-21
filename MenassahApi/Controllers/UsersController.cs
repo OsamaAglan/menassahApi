@@ -189,17 +189,25 @@ namespace Menassah
                 var row = ds.Tables[0].Rows[0];
                 int userId = Convert.ToInt32(row["UserID"]);
                 string userName = row["UserName"].ToString();
-                int? TeacherID = row["TeacherID"] != DBNull.Value ? Convert.ToInt32(row["TeacherID"]) : (int?)null;
-                string TeacherName = row["TeacherName"]?.ToString() ?? "";
-                int? StudentID = row["StudentID"] != DBNull.Value ? Convert.ToInt32(row["StudentID"]) : (int?)null;
-                string StudentName = row["StudentName"]?.ToString() ?? "";
+
+                int personID = Convert.ToInt32(row["PersonID"]);
+                string personName = row["PersonName"]?.ToString() ?? "";
+                string role = row["Role"]?.ToString() ?? "";
+
+
+                //int? TeacherID = row["TeacherID"] != DBNull.Value ? Convert.ToInt32(row["TeacherID"]) : (int?)null;
+                //string TeacherName = row["TeacherName"]?.ToString() ?? "";
+                //int? StudentID = row["StudentID"] != DBNull.Value ? Convert.ToInt32(row["StudentID"]) : (int?)null;
+                //string StudentName = row["StudentName"]?.ToString() ?? "";
 
                 // جلب الأدوار من UserRolesRepo
                 List<string> roles = _userRolesRepo.GetUserRoles(userId);
 
 
                 // توليد التوكن
-                string token = _tokenService.GenerateToken(userId, userName, roles);
+                string token = _tokenService.GenerateToken(userId, userName, roles, personID,
+                        personName,
+                        role);
 
                 // إرسال النتيجة
                 return Ok(new GeneralResponse
@@ -213,10 +221,13 @@ namespace Menassah
                         userId,
                         userName,
                         roles,
-                        TeacherID,
-                        TeacherName,
-                        StudentID,
-                        StudentName
+                        //personID,
+                        //personName,
+                        //role
+                        //TeacherID,
+                        //TeacherName,
+                        //StudentID,
+                        //StudentName
                     }
                 });
             }
