@@ -2,11 +2,12 @@
 
 namespace MenassahApi.DL
 {
-    public class DocumentsDL
+    public class UploadsDL
     {
-        public int documentId { get; set; }
-        public int beneficiaryId { get; set; }
-        public int documentTypeId { get; set; }
+        public int  uploadId { get; set; }
+        public int teacherId { get; set; }
+        public int groupId { get; set; }
+        public string  uploadType { get; set; }
 
         [BindNever]
         public string? filePath { get; set; }
