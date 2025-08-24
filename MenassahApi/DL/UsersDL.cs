@@ -5,7 +5,7 @@
         public int UserID { get; set; }
         public string UserName { get; set; }
         public string PasswordHash { get; set; }
-        public Boolean IsActive { get; set; }
+        public int RoleId { get; set; }//1=teacher , 2=student, 3=admin
 
 
     }

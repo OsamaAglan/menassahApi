@@ -21,7 +21,8 @@ namespace Menassah.Shared
 
             cmd.Parameters.Add(GetParameter("@UserName", UsersDL.UserName));
             cmd.Parameters.Add(GetParameter("@PasswordHash", UsersDL.PasswordHash));
-            cmd.Parameters.Add(GetParameter("@IsActive", UsersDL.IsActive));
+            cmd.Parameters.Add(GetParameter("@IsActive", false));
+            cmd.Parameters.Add(GetParameter("@RoleID", UsersDL.RoleId));
 
 
             SqlParameter pID = GetParameterReturnValue("@NewID");
@@ -47,7 +48,7 @@ namespace Menassah.Shared
             cmd.Parameters.Add(GetParameter("@UserID", UsersDL.UserID));
             cmd.Parameters.Add(GetParameter("@UserName", UsersDL.UserName));
             cmd.Parameters.Add(GetParameter("@PasswordHash", UsersDL.PasswordHash));
-            cmd.Parameters.Add(GetParameter("@IsActive", UsersDL.IsActive));
+            //cmd.Parameters.Add(GetParameter("@IsActive", UsersDL.IsActive));
 
             SqlParameter pID = GetParameterReturnValue("@NewID");
             cmd.Parameters.Add(pID);

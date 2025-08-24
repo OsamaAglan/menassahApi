@@ -192,6 +192,7 @@ namespace Menassah
 
                 int personID = Convert.ToInt32(row["PersonID"]);
                 string personName = row["PersonName"]?.ToString() ?? "";
+                string avatar = row["avatar"]?.ToString() ?? "";
                 string role = row["Role"]?.ToString() ?? "";
 
 
@@ -205,9 +206,7 @@ namespace Menassah
 
 
                 // توليد التوكن
-                string token = _tokenService.GenerateToken(userId, userName, roles, personID,
-                        personName,
-                        role);
+                string token = _tokenService.GenerateToken(userId, userName, roles, personID,personName,role, avatar);
 
                 // إرسال النتيجة
                 return Ok(new GeneralResponse
