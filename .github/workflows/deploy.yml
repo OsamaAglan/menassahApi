@@ -1,0 +1,26 @@
+name: Deploy YaDroodDev
+
+on:
+  push:
+    branches:
+      - master  # Change if your default branch is different
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Deploy Application
+        run: |
+          Stop-WebSite  -Name "YaDroodDev.com-eg.net"
+          Stop-WebAppPool -Name "YaDroodDev.com-eg.net"
+          cd C:\MPS\Code\menassahApi
+          git pull origin master
+          dotnet restore
+          dotnet publish -o C:\MPS\Web\YaDroodDev.com-eg.net -r win-x64 -c Release
+          Copy-Item -Path "C:\MPS\Web\Settings\YaDroodDev\*" -Destination "C:\MPS\Web\YaDroodDev.com-eg.net" -Recurse -Force
+          Start-WebAppPool -Name "YaDroodDev.com-eg.net"
+          Start-WebSite  -Name "YaDroodDev.com-eg.net"
