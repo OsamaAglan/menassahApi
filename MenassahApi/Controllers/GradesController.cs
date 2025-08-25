@@ -12,13 +12,13 @@ namespace Menassah
     //[AuthorizeToken]
     [Route("api/[controller]")]
     [ApiController]
-    public class TeacherGradesController : ControllerBase
+    public class GradesController : ControllerBase
     {
-        private readonly ITeacherGradesRepo _TeacherGradesRepo;
+        private readonly IGradesRepo _GradesRepo;
 
-        public TeacherGradesController(ITeacherGradesRepo TeacherGrades, IMainHelper mainHelper)
+        public GradesController(IGradesRepo Grades, IMainHelper mainHelper)
         {
-            _TeacherGradesRepo = TeacherGrades;
+            _GradesRepo = Grades;
             mainHelperRepo = mainHelper;
         }
 
@@ -26,12 +26,12 @@ namespace Menassah
 
         [HttpPost]
         [Route("Insert")]
-        public ActionResult Insert(TeacherGradesDL TeacherGradesDL)
+        public ActionResult Insert(GradesDL GradesDL)
         {
             GeneralResponse resonse;
             try
             {
-                string ID = _TeacherGradesRepo.Insert(TeacherGradesDL);
+                string ID = _GradesRepo.Insert(GradesDL);
                 if (ID == "0")
                 {
                     resonse = new GeneralResponse
@@ -68,12 +68,12 @@ namespace Menassah
 
         [HttpPut]
         [Route("Update")]
-        public ActionResult Update(TeacherGradesDL TeacherGradesDL)
+        public ActionResult Update(GradesDL GradesDL)
         {
             GeneralResponse resonse;
             try
             {
-                string ID = _TeacherGradesRepo.Update(TeacherGradesDL);
+                string ID = _GradesRepo.Update(GradesDL);
                 if (ID == "0")
                 {
                     resonse = new GeneralResponse
@@ -109,13 +109,13 @@ namespace Menassah
         }
 
         [HttpDelete]
-        [Route("Delete/{TeacherGradeID}")]
-        public ActionResult Delete(int TeacherGradeID)
+        [Route("Delete/{GradeID}")]
+        public ActionResult Delete(int GradeID)
         {
             GeneralResponse resonse;
             try
             {
-                string x = _TeacherGradesRepo.Delete(TeacherGradeID);
+                string x = _GradesRepo.Delete(GradeID);
                 resonse = new GeneralResponse
                 {
                     ID = "",
@@ -141,7 +141,7 @@ namespace Menassah
             string Language = "aa";
             //string Language = mainHelperRepo.GetLanguage(request);
 
-            DataSet ds = _TeacherGradesRepo.GetAll();
+            DataSet ds = _GradesRepo.GetAll();
             var resonse = new GeneralResponse
             {
                 ID = "",
@@ -155,15 +155,15 @@ namespace Menassah
 
     
         [HttpGet]
-        [Route("GetByID/{TeacherGradeID}")]
-        public IActionResult GetByID(int TeacherGradeID)
+        [Route("GetByID/{GradeID}")]
+        public IActionResult GetByID(int GradeID)
         {
             var request = Request; //Current
 
             string Language = "aa";
             //string Language = mainHelperRepo.GetLanguage(request);
 
-            DataSet ds = _TeacherGradesRepo.GetByID(TeacherGradeID);
+            DataSet ds = _GradesRepo.GetByID(GradeID);
             var resonse = new GeneralResponse
             {
                 ID = "",
@@ -174,30 +174,6 @@ namespace Menassah
 
             return Ok(resonse);
         }
-
-
-
-     [HttpGet]
-        [Route("GetByTeacherID/{TeacherID}")]
-        public IActionResult GetByTeacherID(int TeacherID)
-        {
-            var request = Request; //Current
-
-            string Language = "aa";
-            //string Language = mainHelperRepo.GetLanguage(request);
-
-            DataSet ds = _TeacherGradesRepo.GetByTeacherID(TeacherID);
-            var resonse = new GeneralResponse
-            {
-                ID = "",
-                Message = "",
-                Success = true,
-                Data = mainHelperRepo.Serialize(ds.Tables[0])
-            };
-
-            return Ok(resonse);
-        }
-
 
     }
 }

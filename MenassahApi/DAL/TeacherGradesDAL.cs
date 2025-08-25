@@ -105,6 +105,18 @@ namespace Menassah.Shared
 
 }
 
+
+
+        public DataSet GetByTeacherID(int TeacherID)
+{
+
+    SqlCommand cmd = GetCommand("spx_tbl_TeacherGrades_GetByTeacherID", CommandType.StoredProcedure);
+    cmd.Parameters.Add(GetParameter("@TeacherID", TeacherID));
+    var ds = GetDataSet(cmd, 999);
+    return ds;
+
+}
+
     }
 }
 
