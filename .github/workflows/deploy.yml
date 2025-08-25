@@ -1,4 +1,4 @@
-name: Deploy YaDroodDev
+name: Deploy YaDroosDev
 
 on:
   push:
@@ -15,12 +15,11 @@ jobs:
 
       - name: Deploy Application
         run: |
-          Stop-WebSite  -Name "YaDroodDev.com-eg.net"
-          Stop-WebAppPool -Name "YaDroodDev.com-eg.net"
+          Stop-WebSite  -Name "yadroosdev.com-eg.net"
+          Stop-WebAppPool -Name "yadroosdev.com-eg.net"
           cd C:\MPS\Code\menassahApi
           git pull origin master
-          dotnet restore
-          dotnet publish -o C:\MPS\Web\YaDroodDev.com-eg.net -r win-x64 -c Release
-          Copy-Item -Path "C:\MPS\Web\Settings\YaDroodDev\*" -Destination "C:\MPS\Web\YaDroodDev.com-eg.net" -Recurse -Force
-          Start-WebAppPool -Name "YaDroodDev.com-eg.net"
-          Start-WebSite  -Name "YaDroodDev.com-eg.net"
+          dotnet publish -o C:\MPS\Web\yadroosdev.com-eg.net -r win-x64 -c Release
+          Copy-Item -Path "C:\MPS\Web\Settings\YaDroosDev\*" -Destination "C:\MPS\Web\yadroosdev.com-eg.net" -Recurse -Force
+          Start-WebAppPool -Name "yadroosdev.com-eg.net"
+          Start-WebSite  -Name "yadroosdev.com-eg.net"
