@@ -15,6 +15,7 @@ namespace Menassah
 {
     //[AuthorizeToken]
     // test
+    // test2
     [ApiController]
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
