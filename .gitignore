@@ -13,6 +13,7 @@ obj/
 
 ## Visual Studio Code
 .vscode/
+.vs/
 
 ## Others
 *.log
