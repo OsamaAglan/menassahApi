@@ -19,7 +19,6 @@ jobs:
           Stop-WebAppPool -Name "yadroosdev.com-eg.net"
           cd C:\MPS\Code\menassahApi
           git pull origin master
-          dotnet restore
           dotnet publish -o C:\MPS\Web\yadroosdev.com-eg.net -r win-x64 -c Release
           Copy-Item -Path "C:\MPS\Web\Settings\YaDroosDev\*" -Destination "C:\MPS\Web\yadroosdev.com-eg.net" -Recurse -Force
           Start-WebAppPool -Name "yadroosdev.com-eg.net"
