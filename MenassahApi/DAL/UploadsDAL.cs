@@ -109,7 +109,7 @@ namespace Menassah.Shared
         {
 
             SqlCommand cmd = GetCommand("spx_tbl_Uploads_GetByTeacherID", CommandType.StoredProcedure);
-            cmd.Parameters.Add(GetParameter("@BeneficiaryID", TeacherID));
+            cmd.Parameters.Add(GetParameter("@TeacherID", TeacherID));
             var ds = GetDataSet(cmd, 999);
             return ds;
 

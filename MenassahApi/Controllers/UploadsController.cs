@@ -159,6 +159,37 @@ namespace Menassah
             return Ok(resonse);
         }
 
+     [HttpGet]
+        [Route("GetByGroupID/{GroupID}")]
+        public IActionResult GetByGroupID(int GroupID)
+        {
+            var request = Request; //Current
+
+            string Language = "aa";
+            //string Language = mainHelperRepo.GetLanguage(request);
+
+            DataSet ds = _UploadsRepo.GetByGroupID(GroupID);
+            var resonse = new GeneralResponse
+            {
+                ID = "",
+                Message = "",
+                Success = true,
+                Data = mainHelperRepo.Serialize(ds.Tables[0])
+            };
+
+            return Ok(resonse);
+        }
+
+
+
+
+
+
+
+
+
+
+
         [HttpPost]
         [Route("Insert")]
         public async Task<IActionResult> Insert([FromForm] UploadsDL model)
