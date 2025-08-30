@@ -8,6 +8,7 @@ namespace MenassahApi.DL
         public int teacherId { get; set; }
         public int groupId { get; set; }
         public string  uploadType { get; set; }
+        public Boolean  isPublic { get; set; }
 
         [BindNever]
         public string? filePath { get; set; }

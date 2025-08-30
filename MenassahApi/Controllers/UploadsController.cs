@@ -180,16 +180,6 @@ namespace Menassah
             return Ok(resonse);
         }
 
-
-
-
-
-
-
-
-
-
-
         [HttpPost]
         [Route("Insert")]
         public async Task<IActionResult> Insert([FromForm] UploadsDL model)
@@ -270,80 +260,6 @@ namespace Menassah
             }
         }
 
-
-        //[HttpPost]
-        //[Route("Insert")]
-        //public async Task<IActionResult> Insert([FromForm] UploadsDL model)
-        //{
-        //    try
-        //    {
-        //        var file = model.File;
-        //        if (file == null || file.Length == 0)
-        //        {
-        //            return BadRequest(new GeneralResponse
-        //            {
-        //                ID = "0",
-        //                Message = "الملف غير موجود",
-        //                Success = false
-        //            });
-        //        }
-
-        //        string UploadPath = model.uploadType switch
-        //        {
-        //            "docs" or "videos" or "images" =>
-        //                $"uploads/teachers/{model.teacherId}/groups/{model.groupId}/{model.uploadType}",
-
-        //            "profile" =>
-        //                $"uploads/teachers/{model.teacherId}/{model.uploadType}",
-
-        //            _ => $"uploads/teachers/{model.teacherId}"
-        //        };
-
-        //        // حفظ الملف على السيرفر
-        //        string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", UploadPath);
-        //        if (!Directory.Exists(uploadsFolder))
-        //            Directory.CreateDirectory(uploadsFolder);
-
-        //        string uniqueFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
-        //        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-        //        using (var stream = new FileStream(filePath, FileMode.Create))
-        //        {
-        //            await file.CopyToAsync(stream);
-        //        }
-
-        //        // جهز الكائن
-        //        var doc = new UploadsDL
-        //        {
-        //            uploadType = model.uploadType,
-        //            teacherId = model.teacherId,
-        //            groupId = model.groupId,
-        //            filePath = "/" + UploadPath + "/" + uniqueFileName
-        //        };
-
-        //        string ID = _UploadsRepo.Insert(doc);
-        //        if (ID == "0")
-        //        {
-        //            return BadRequest(new GeneralResponse
-        //            {
-        //                ID = "0",
-        //                Message = "Can't insert uploads",
-        //                Success = false
-        //            });
-        //        }
-
-        //        return Ok(new GeneralResponse
-        //        {
-        //            ID = ID,
-        //            Message = "تم رفع الملف بنجاح",
-        //            Success = true
-        //        });
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(mainHelperRepo.GetException(ex));
-        //    }
-        //}
 
 
     }

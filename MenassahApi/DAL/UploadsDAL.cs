@@ -20,6 +20,7 @@ namespace Menassah.Shared
             cmd.Parameters.Add(GetParameter("@groupId", uploadsDL.groupId));
             cmd.Parameters.Add(GetParameter("@uploadType", uploadsDL.uploadType));
             cmd.Parameters.Add(GetParameter("@filePath", uploadsDL.filePath));
+            cmd.Parameters.Add(GetParameter("@isPublic", uploadsDL.isPublic));
 
             SqlParameter pID = GetParameterReturnValue("@NewID");
             cmd.Parameters.Add(pID);
