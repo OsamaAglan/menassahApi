@@ -9,8 +9,7 @@
         public int GradeID { get; set; }//الصف الدراسي
         public int Term { get; set; }
         public string YoutubePlayListID { get; set; }
-        public string DocsListPath { get; set; }
-        public string LocalVideosListPath { get; set; }
+
 
 
 
