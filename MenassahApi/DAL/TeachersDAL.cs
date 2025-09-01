@@ -29,7 +29,7 @@ namespace Menassah.Shared
             cmd.Parameters.Add(GetParameter("@Address", TeachersDL.Address));
             cmd.Parameters.Add(GetParameter("@Gender", TeachersDL.Gender));
             cmd.Parameters.Add(GetParameter("@Bio", TeachersDL.Bio));
-            cmd.Parameters.Add(GetParameter("@profilePicture", TeachersDL.profilePicture));
+            //cmd.Parameters.Add(GetParameter("@profilePicture", TeachersDL.profilePicture));
 
 
 
@@ -62,7 +62,7 @@ namespace Menassah.Shared
             cmd.Parameters.Add(GetParameter("@Address", TeachersDL.Address));
             cmd.Parameters.Add(GetParameter("@Gender", TeachersDL.Gender));
             cmd.Parameters.Add(GetParameter("@Bio", TeachersDL.Bio));
-            cmd.Parameters.Add(GetParameter("@profilePicture", TeachersDL.profilePicture));
+            //cmd.Parameters.Add(GetParameter("@profilePicture", TeachersDL.profilePicture));
 
 
             SqlParameter pID = GetParameterReturnValue("@NewID");

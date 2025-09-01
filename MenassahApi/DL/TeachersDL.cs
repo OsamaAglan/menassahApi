@@ -15,7 +15,7 @@ namespace MenassahApi.DL
         public string Address { get; set; }
         public int Gender { get; set; }
         public string Notes { get; set; }
-        public string profilePicture { get; set; }
+        //public string profilePicture { get; set; }
                 public string Bio { get; set; }
                
 
