@@ -6,7 +6,7 @@ namespace MenassahApi.DL
     {
         public int StudentID { get; set; }
         public string StudentName { get; set; }
-        public string GradeLevel { get; set; }
+        public int GradeLevel { get; set; }
         public string Notes { get; set; }
        
         public int UserID { get; set; }
@@ -14,7 +14,6 @@ namespace MenassahApi.DL
         public string Email { get; set; }
         public int CityID { get; set; }
         public string Address { get; set; }
-        public string profilePicture { get; set; }
         public int Gender { get; set; }
     }
 
