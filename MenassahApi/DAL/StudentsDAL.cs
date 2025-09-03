@@ -1,4 +1,6 @@
-﻿using Menassah.Shared;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.ExtendedProperties;
+using Menassah.Shared;
 using MenassahApi.DL;
 using MenassahApi.Repo;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +22,6 @@ namespace Menassah.Shared
             cmd.Parameters.Add(GetParameter("@StudentName", StudentsDL.StudentName));
             cmd.Parameters.Add(GetParameter("@GradeLevel", StudentsDL.GradeLevel));
             cmd.Parameters.Add(GetParameter("@Notes", StudentsDL.Notes));
-            cmd.Parameters.Add(GetParameter("@UserID", StudentsDL.UserID));
             cmd.Parameters.Add(GetParameter("@PhoneNumber", StudentsDL.PhoneNumber));
             cmd.Parameters.Add(GetParameter("@Email", StudentsDL.Email));
             cmd.Parameters.Add(GetParameter("@CityID", StudentsDL.CityID));
@@ -52,12 +53,12 @@ namespace Menassah.Shared
             cmd.Parameters.Add(GetParameter("@StudentName", StudentsDL.StudentName));
             cmd.Parameters.Add(GetParameter("@GradeLevel", StudentsDL.GradeLevel));
             cmd.Parameters.Add(GetParameter("@Notes", StudentsDL.Notes));
-            cmd.Parameters.Add(GetParameter("@UserID", StudentsDL.UserID));
             cmd.Parameters.Add(GetParameter("@PhoneNumber", StudentsDL.PhoneNumber));
             cmd.Parameters.Add(GetParameter("@Email", StudentsDL.Email));
             cmd.Parameters.Add(GetParameter("@CityID", StudentsDL.CityID));
             cmd.Parameters.Add(GetParameter("@Address", StudentsDL.Address));
             cmd.Parameters.Add(GetParameter("@Gender", StudentsDL.Gender));
+
 
 
             SqlParameter pID = GetParameterReturnValue("@NewID");
