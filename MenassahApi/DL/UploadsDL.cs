@@ -6,6 +6,7 @@ namespace MenassahApi.DL
     {
         public int  uploadId { get; set; }
         public int teacherId { get; set; }
+        public int studentId { get; set; }
         public int groupId { get; set; }
         public string  uploadType { get; set; }
         public Boolean  isPublic { get; set; }

@@ -8,7 +8,7 @@ namespace MenassahApi.Repo
 
     {
         public string Insert(UploadsDL  uploadsDL);
-        public string Update(UploadsDL  uploadsDL);
+        //public string Update(UploadsDL  uploadsDL);
         public string Delete(int  uploadID);
         public DataSet GetAll();
         public DataSet GetByID(int  uploadID);

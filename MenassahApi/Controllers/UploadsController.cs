@@ -27,47 +27,47 @@ namespace Menassah
         private readonly IMainHelper mainHelperRepo;
 
 
-        [HttpPut]
-        [Route("Update")]
-        public ActionResult Update(UploadsDL  uploadsDL)
-        {
-            GeneralResponse resonse;
-            try
-            {
-                string ID = _UploadsRepo.Update( uploadsDL);
-                if (ID == "0")
-                {
-                    resonse = new GeneralResponse
-                    {
-                        ID = "0",
-                        Message = "Can't Update Type",
-                        Success = false
-                    };
+        //[HttpPut]
+        //[Route("Update")]
+        //public ActionResult Update(UploadsDL  uploadsDL)
+        //{
+        //    GeneralResponse resonse;
+        //    try
+        //    {
+        //        string ID = _UploadsRepo.Update( uploadsDL);
+        //        if (ID == "0")
+        //        {
+        //            resonse = new GeneralResponse
+        //            {
+        //                ID = "0",
+        //                Message = "Can't Update Type",
+        //                Success = false
+        //            };
 
-                    return BadRequest(resonse);
+        //            return BadRequest(resonse);
 
-                }
-                else
-                {
-                    resonse = new GeneralResponse
-                    {
-                        ID = ID,
-                        Message = "",
-                        Success = true
-                    };
+        //        }
+        //        else
+        //        {
+        //            resonse = new GeneralResponse
+        //            {
+        //                ID = ID,
+        //                Message = "",
+        //                Success = true
+        //            };
 
-                    return Ok(resonse);
+        //            return Ok(resonse);
 
 
-                }
-                //return 0;
+        //        }
+        //        //return 0;
 
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(mainHelperRepo.GetException(ex));
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(mainHelperRepo.GetException(ex));
+        //    }
+        //}
 
 
         [HttpDelete]
@@ -199,14 +199,23 @@ namespace Menassah
 
                 string UploadPath = model.uploadType switch
                 {
+                    // 🟢 لو Docs/Videos/Images => زي ما هي
                     "docs" or "videos" or "images" =>
                         $"uploads/teachers/{model.teacherId}/groups/{model.groupId}/{model.uploadType}",
 
-                    "profile" =>
+                    // 🟢 لو Profile => يتحقق مين اللي موجود (Student ولا Teacher)
+                    "profile" when model.studentId > 0 =>
+                        $"uploads/students/{model.studentId}/{model.uploadType}",
+
+                    "profile" when model.teacherId > 0 =>
                         $"uploads/teachers/{model.teacherId}/{model.uploadType}",
 
-                    _ => $"uploads/teachers/{model.teacherId}"
+                    // 🟡 الحالة الافتراضية
+                    _ => model.studentId > 0
+                        ? $"uploads/students/{model.studentId}"
+                        : $"uploads/teachers/{model.teacherId}"
                 };
+
 
                 // حفظ الملف على السيرفر
                 string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", UploadPath);
@@ -226,6 +235,7 @@ namespace Menassah
                 {
                     uploadType = model.uploadType,
                     teacherId = model.teacherId,
+                    studentId = model.studentId,
                     groupId = model.groupId,
                     filePath = "/" + UploadPath + "/" + uniqueFileName
                 };

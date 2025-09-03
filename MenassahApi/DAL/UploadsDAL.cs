@@ -17,6 +17,7 @@ namespace Menassah.Shared
         {
             SqlCommand cmd = GetCommand("spx_tbl_Uploads_Insert", CommandType.StoredProcedure);
             cmd.Parameters.Add(GetParameter("@teacherId", uploadsDL.teacherId));
+            cmd.Parameters.Add(GetParameter("@studentId", uploadsDL.studentId));
             cmd.Parameters.Add(GetParameter("@groupId", uploadsDL.groupId));
             cmd.Parameters.Add(GetParameter("@uploadType", uploadsDL.uploadType));
             cmd.Parameters.Add(GetParameter("@filePath", uploadsDL.filePath));
@@ -38,34 +39,34 @@ namespace Menassah.Shared
 
             return ID;
         }
-        public string Update(UploadsDL uploadsDL)
-        {
-            SqlCommand cmd = GetCommand("spx_tbl_Uploads_Update", CommandType.StoredProcedure);
+        //public string Update(UploadsDL uploadsDL)
+        //{
+        //    SqlCommand cmd = GetCommand("spx_tbl_Uploads_Update", CommandType.StoredProcedure);
 
-            cmd.Parameters.Add(GetParameter("@uploadId", uploadsDL.uploadId));
-            cmd.Parameters.Add(GetParameter("@teacherId", uploadsDL.teacherId));
-            cmd.Parameters.Add(GetParameter("@groupId", uploadsDL.groupId));
-            cmd.Parameters.Add(GetParameter("@uploadType", uploadsDL.uploadType));
-            cmd.Parameters.Add(GetParameter("@filePath", uploadsDL.filePath));
+        //    cmd.Parameters.Add(GetParameter("@uploadId", uploadsDL.uploadId));
+        //    cmd.Parameters.Add(GetParameter("@teacherId", uploadsDL.teacherId));
+        //    cmd.Parameters.Add(GetParameter("@groupId", uploadsDL.groupId));
+        //    cmd.Parameters.Add(GetParameter("@uploadType", uploadsDL.uploadType));
+        //    cmd.Parameters.Add(GetParameter("@filePath", uploadsDL.filePath));
 
 
 
-            SqlParameter pID = GetParameterReturnValue("@NewID");
-            cmd.Parameters.Add(pID);
+        //    SqlParameter pID = GetParameterReturnValue("@NewID");
+        //    cmd.Parameters.Add(pID);
 
-            ExecuteNonQuery(cmd);
-            string ID;
-            if (pID == null || pID.Value == null)
-            {
-                ID = "0";
-            }
-            else
-            {
-                ID = Convert.ToString(pID.Value);
-            }
+        //    ExecuteNonQuery(cmd);
+        //    string ID;
+        //    if (pID == null || pID.Value == null)
+        //    {
+        //        ID = "0";
+        //    }
+        //    else
+        //    {
+        //        ID = Convert.ToString(pID.Value);
+        //    }
 
-            return ID;
-        }
+        //    return ID;
+        //}
         public string Delete(int UploadID)
         {
             SqlCommand cmd = GetCommand("spx_tbl_Uploads_Delete", CommandType.StoredProcedure);
