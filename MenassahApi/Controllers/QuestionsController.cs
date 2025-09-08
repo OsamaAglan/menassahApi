@@ -179,65 +179,6 @@ namespace Menassah
 
 
 
-        //[HttpGet]
-        //[Route("GetByGroupID/{GroupID}")]
-        //public IActionResult GetByGroupID(int GroupID)
-        //{
-        //    string Language = "aa";
-        //    //string Language = mainHelperRepo.GetLanguage(Request);
-
-        //    DataSet ds = _QuestionsRepo.GetByGroupID(GroupID);
-
-        //    // Serialize الجداول
-        //    var questions = mainHelperRepo.Serialize(ds.Tables[0]);
-        //    var options = mainHelperRepo.Serialize(ds.Tables[1]);
-
-        //    // Ensure the serialized data is cast to a compatible type
-        //    var questionList = questions.Cast<Dictionary<string, object>>().ToList();
-        //    var optionList = options.Cast<Dictionary<string, object>>().ToList();
-
-        //    // الربط بين الأسئلة والاختيارات
-
-
-        //    var mergedData = questionList.Select(q => new
-        //    {
-        //        questionId = q.ContainsKey("questionId") ? q["questionId"] : null,
-        //        teacherGroupId = q.ContainsKey("teacherGroupId") ? q["teacherGroupId"] : null,
-        //        groupName = q.ContainsKey("groupName") ? q["groupName"] : null,
-        //        term = q.ContainsKey("term") ? q["term"] : null,
-        //        gradeId = q.ContainsKey("gradeId") ? q["gradeId"] : null,
-        //        gradeName = q.ContainsKey("gradeName") ? q["gradeName"] : null,
-        //        subjectId = q.ContainsKey("subjectId") ? q["subjectId"] : null,
-        //        subjectName = q.ContainsKey("subjectName") ? q["subjectName"] : null,
-        //        questionText = q.ContainsKey("questionText") ? q["questionText"] : null,
-        //        score = q.ContainsKey("score") ? q["score"] : null,
-        //        createdAt = q.ContainsKey("createdAt") ? q["createdAt"] : null,
-        //        questionTypeId = q.ContainsKey("questionTypeId") ? q["questionTypeId"] : null,
-        //        typeName = q.ContainsKey("typeName") ? q["typeName"] : null,
-        //        askedIn = q.ContainsKey("askedIn") ? q["askedIn"] : null,
-        //        options = optionList
-        //                    .Where(o => o.ContainsKey("questionId") && o["questionId"].Equals(q["questionId"]))
-        //                    .Select(o => new
-        //                    {
-        //                        optionId = o.ContainsKey("optionId") ? o["optionId"] : null,
-        //                        optionText = o.ContainsKey("optionText") ? o["optionText"] : null,
-        //                        isCorrect = o.ContainsKey("isCorrect") ? o["isCorrect"] : null
-        //                    })
-        //                    .ToList()
-        //    }).ToList();
-
-        //    var response = new GeneralResponse
-        //    {
-        //        ID = "",
-        //        Message = "",
-        //        Success = true,
-        //        Data = mergedData
-        //    };
-
-        //    return Ok(response);
-        //}
-
-
 
 
 

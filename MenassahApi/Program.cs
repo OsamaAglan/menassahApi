@@ -1,4 +1,5 @@
-﻿using Menassah;
+﻿using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using Menassah;
 using Menassah.DAL;
 using Menassah.Repo;
 using Menassah.Repository;
@@ -80,6 +81,7 @@ builder.Services.AddScoped<IUploadsRepo, UploadsDAL>();
 builder.Services.AddScoped<ISubjectsRepo, SubjectsDAL>();
 builder.Services.AddScoped<IGradesRepo, GradesDAL>();
 builder.Services.AddScoped<IStudentGroupsRepo, StudentGroupsDAL>();
+builder.Services.AddScoped<IStudentAnswersRepo, StudentAnswersDAL>();
 
 // خدمة توليد JWT Token
 builder.Services.AddScoped<ITokenService, TokenService>();
