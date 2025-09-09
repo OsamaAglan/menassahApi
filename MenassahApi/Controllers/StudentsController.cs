@@ -175,5 +175,34 @@ namespace Menassah
             return Ok(resonse);
         }
 
+
+
+     [HttpGet]
+        [Route("GetByTeacherID/{TeacherID}")]
+        public IActionResult GetByTeacherID(int TeacherID)
+        {
+            var request = Request; //Current
+
+            string Language = "aa";
+            //string Language = mainHelperRepo.GetLanguage(request);
+
+            DataSet ds = _StudentsRepo.GetByTeacherID(TeacherID);
+            var resonse = new GeneralResponse
+            {
+                ID = "",
+                Message = "",
+                Success = true,
+                Data = mainHelperRepo.Serialize(ds.Tables[0])
+            };
+
+            return Ok(resonse);
+        }
+
+
+
+
+
+
+
     }
 }

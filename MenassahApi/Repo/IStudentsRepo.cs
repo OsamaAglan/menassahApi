@@ -11,6 +11,7 @@ namespace MenassahApi.Repo
         public string Delete(int StudentID);
         public DataSet GetAll();
         public DataSet GetByID(int StudentID);
+        public DataSet GetByTeacherID(int TeacherID);
 
 
     }
