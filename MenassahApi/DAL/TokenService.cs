@@ -1,6 +1,7 @@
 ﻿using MenassahApi.Repo;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System.Diagnostics;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -16,7 +17,7 @@ namespace Menassah.Shared
             _configuration = configuration;
         }
 
-        public string GenerateToken(int userId, string username, List<string> roles, int personID,string personName,string role,string avatar)
+        public string GenerateToken(int userId, string username, List<string> roles, int personID,string personName,string role,string avatar, int GradeID)
         {
             var jwtSettings = _configuration.GetSection("JwtSettings");
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]!));
@@ -31,6 +32,7 @@ namespace Menassah.Shared
                 new Claim("personName", personName),
                 new Claim("role", role),
                 new Claim("avatar", avatar),
+                new Claim("GradeID", GradeID.ToString()),
 
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };

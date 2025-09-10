@@ -2,6 +2,6 @@
 {
     public interface ITokenService
     {
-        string GenerateToken(int userId, string username, List<string> roles, int personID,string personName,string role,string avatar);
+        string GenerateToken(int userId, string username, List<string> roles, int personID,string personName,string role,string avatar,int GradeID);
     }
 }
