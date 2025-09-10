@@ -7,7 +7,6 @@ namespace MenassahApi.Repo
 
     {
         public string Insert(StudentGroupsDL StudentGroupsDL);
-        public string Update(StudentGroupsDL StudentGroupsDL);
         public string UpdateStatuses(List<StudentStatusUpdate> updates);
         
         public string Delete(int StudentGroupID);

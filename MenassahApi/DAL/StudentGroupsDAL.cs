@@ -19,34 +19,7 @@ namespace Menassah.Shared
 
             cmd.Parameters.Add(GetParameter("@StudentID", StudentGroupsDL.studentId));
             cmd.Parameters.Add(GetParameter("@TeacherGroupID", StudentGroupsDL.teacherGroupId));
-            cmd.Parameters.Add(GetParameter("@IsApproved", StudentGroupsDL.isApproved));
 
-
-
-            SqlParameter pID = GetParameterReturnValue("@NewID");
-            cmd.Parameters.Add(pID);
-
-            ExecuteNonQuery(cmd);
-            string ID;
-            if (pID == null || pID.Value == null)
-            {
-                ID = "0";
-            }
-            else
-            {
-                ID = Convert.ToString(pID.Value);
-            }
-
-            return ID;
-        }
-        public string Update(StudentGroupsDL StudentGroupsDL)
-        {
-            SqlCommand cmd = GetCommand("spx_tbl_StudentGroups_Update", CommandType.StoredProcedure);
-
-            cmd.Parameters.Add(GetParameter("@RoleID", StudentGroupsDL.studentGroupId));
-            cmd.Parameters.Add(GetParameter("@StudentID", StudentGroupsDL.studentId));
-            cmd.Parameters.Add(GetParameter("@TeacherGroupID", StudentGroupsDL.teacherGroupId));
-            cmd.Parameters.Add(GetParameter("@IsApproved", StudentGroupsDL.isApproved));
 
 
             SqlParameter pID = GetParameterReturnValue("@NewID");

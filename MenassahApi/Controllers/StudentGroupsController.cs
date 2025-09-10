@@ -66,48 +66,6 @@ namespace Menassah
             }
         }
 
-        [HttpPut]
-        [Route("Update")]
-        public ActionResult Update(StudentGroupsDL StudentGroupsDL)
-        {
-            GeneralResponse resonse;
-            try
-            {
-                string ID = _StudentGroupsRepo.Update(StudentGroupsDL);
-                if (ID == "0")
-                {
-                    resonse = new GeneralResponse
-                    {
-                        ID = "0",
-                        Message = "Can't Update Type",
-                        Success = false
-                    };
-
-                    return BadRequest(resonse);
-
-                }
-                else
-                {
-                    resonse = new GeneralResponse
-                    {
-                        ID = ID,
-                        Message = "",
-                        Success = true
-                    };
-
-                    return Ok(resonse);
-
-
-                }
-                //return 0;
-
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(mainHelperRepo.GetException(ex));
-            }
-        }
-
 
 
 
