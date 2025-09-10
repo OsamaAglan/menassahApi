@@ -108,6 +108,57 @@ namespace Menassah
             }
         }
 
+
+
+
+
+        [HttpPut]
+        [Route("UpdateStatus")]
+        public ActionResult UpdateStatus([FromBody] List<StudentStatusUpdate> updates)
+        {
+            GeneralResponse response;
+            try
+            {
+                string result = _StudentGroupsRepo.UpdateStatuses(updates);
+                if (result == "0")
+                {
+                    response = new GeneralResponse
+                    {
+                        ID = "0",
+                        Message = "Can't Update Statuses",
+                        Success = false
+                    };
+
+                    return BadRequest(response);
+                }
+                else
+                {
+                    response = new GeneralResponse
+                    {
+                        ID = result,
+                        Message = "✅ تم تحديث الحالات بنجاح",
+                        Success = true
+                    };
+
+                    return Ok(response);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(mainHelperRepo.GetException(ex));
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
         [HttpDelete]
         [Route("Delete/{StudentGroupID}")]
         public ActionResult Delete(int StudentGroupID)

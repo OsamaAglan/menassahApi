@@ -65,6 +65,40 @@ namespace Menassah.Shared
 
             return ID;
         }
+
+       
+        public string UpdateStatuses(List<StudentStatusUpdate> updates)
+        {
+            using (SqlCommand cmd = GetCommand("spx_tbl_StudentGroups_UpdateStatus", CommandType.StoredProcedure))
+            {
+                // تجهيز DataTable مطابق للـ User-Defined Table Type
+                DataTable tvp = new DataTable();
+                tvp.Columns.Add("StudentGroupID", typeof(int));
+                tvp.Columns.Add("Status", typeof(int));
+
+                foreach (var u in updates)
+                {
+                    tvp.Rows.Add(u.StudentGroupID, u.Status);
+                }
+
+                // إضافة البراميتر من نوع Structured
+                SqlParameter tvpParam = cmd.Parameters.AddWithValue("@StudentStatuses", tvp);
+                tvpParam.SqlDbType = SqlDbType.Structured;
+                tvpParam.TypeName = "dbo.StudentGroupStatusType";
+
+                ExecuteNonQuery(cmd);
+
+                // هنا مش محتاجين ID راجع لأن الإجراء بيعمل Update فقط
+                return "1"; // ترجع 1 يعني نجاح
+            }
+        }
+
+
+
+
+
+
+
         public string Delete(int StudentGroupID)
         {
             SqlCommand cmd = GetCommand("spx_tbl_StudentGroups_Delete", CommandType.StoredProcedure);
@@ -136,6 +170,7 @@ namespace Menassah.Shared
 
 }
 
+       
     }
 }
 

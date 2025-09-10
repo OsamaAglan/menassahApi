@@ -9,5 +9,12 @@
    
 
     }
+    public class StudentStatusUpdate
+    {
+        public int StudentGroupID { get; set; }
+        public int Status { get; set; }
+    }
+
+
 
 }
