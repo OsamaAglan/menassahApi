@@ -82,6 +82,7 @@ builder.Services.AddScoped<ISubjectsRepo, SubjectsDAL>();
 builder.Services.AddScoped<IGradesRepo, GradesDAL>();
 builder.Services.AddScoped<IStudentGroupsRepo, StudentGroupsDAL>();
 builder.Services.AddScoped<IStudentAnswersRepo, StudentAnswersDAL>();
+builder.Services.AddScoped<INotificationsRepo , NotificationsDAL>();
 
 // خدمة توليد JWT Token
 builder.Services.AddScoped<ITokenService, TokenService>();
