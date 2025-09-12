@@ -191,7 +191,7 @@ namespace Menassah
                 string userName = row["UserName"].ToString();
 
                 int personID = Convert.ToInt32(row["PersonID"]);
-                int GradeID = Convert.ToInt32(row["GradeLevel"]);
+                int GradeID = Convert.ToInt32(row["gradeId"]);
                 string personName = row["PersonName"]?.ToString() ?? "";
                 string avatar = row["avatar"]?.ToString() ?? "";
                 string role = row["Role"]?.ToString() ?? "";
