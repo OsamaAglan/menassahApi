@@ -150,7 +150,13 @@ namespace Menassah
                 ID = "",
                 Message = "",
                 Success = true,
-                Data = mainHelperRepo.Serialize(ds.Tables[0])
+           
+                Data = new
+                {
+                    Hdr = mainHelperRepo.Serialize(ds.Tables[0]),
+                    Dtls = mainHelperRepo.Serialize(ds.Tables[1])
+                }
+
             };
 
             return Ok(resonse);
