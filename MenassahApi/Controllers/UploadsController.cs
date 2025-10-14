@@ -158,7 +158,7 @@ namespace Menassah
                 string UploadPath = model.UploadType switch
                 {
                     // 🟢 لو Docs/Videos/Images => زي ما هي
-                    "docs" or "videos" or "images" =>
+                    "docs" or "videos" or "images" or "LessonProfile" =>
                         $"uploads/teachers/{model.TeacherId}/groups/{model.GroupId}/Lessons/{model.LessonID}/{model.UploadType}",
 
                     // 🟢 لو Profile => يتحقق مين اللي موجود (Student ولا Teacher)
