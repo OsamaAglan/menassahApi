@@ -16,12 +16,13 @@ namespace Menassah.Shared
         public string Insert(UploadsDL uploadsDL)
         {
             SqlCommand cmd = GetCommand("spx_tbl_Uploads_Insert", CommandType.StoredProcedure);
-            cmd.Parameters.Add(GetParameter("@teacherId", uploadsDL.teacherId));
-            cmd.Parameters.Add(GetParameter("@studentId", uploadsDL.studentId));
-            cmd.Parameters.Add(GetParameter("@groupId", uploadsDL.groupId));
-            cmd.Parameters.Add(GetParameter("@uploadType", uploadsDL.uploadType));
-            cmd.Parameters.Add(GetParameter("@filePath", uploadsDL.filePath));
-            cmd.Parameters.Add(GetParameter("@isPublic", uploadsDL.isPublic));
+            cmd.Parameters.Add(GetParameter("@teacherId", uploadsDL.TeacherId));
+            cmd.Parameters.Add(GetParameter("@studentId", uploadsDL.StudentId));
+            cmd.Parameters.Add(GetParameter("@groupId", uploadsDL.GroupId));
+            cmd.Parameters.Add(GetParameter("@uploadType", uploadsDL.UploadType));
+            cmd.Parameters.Add(GetParameter("@filePath", uploadsDL.FilePath));
+            cmd.Parameters.Add(GetParameter("@isPublic", uploadsDL.IsPublic));
+            cmd.Parameters.Add(GetParameter("@LessonID", uploadsDL.LessonID));
 
             SqlParameter pID = GetParameterReturnValue("@NewID");
             cmd.Parameters.Add(pID);

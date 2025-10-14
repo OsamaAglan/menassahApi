@@ -48,6 +48,7 @@ table.Columns.Add("ContentTypeID", typeof(int));
             cmd.Parameters.Add(GetParameter("@Title", LessonsDL.Title));
             cmd.Parameters.Add(GetParameter("@IsFree", LessonsDL.IsFree));
             cmd.Parameters.Add(GetParameter("@LessonOrder", LessonsDL.LessonOrder));
+            cmd.Parameters.Add(GetParameter("@LessonImagePath", LessonsDL.LessonImagePath));
 
             // تحويل الـ List ل DataTable وتمريره كـ Structured Parameter
             var dtDtls = ConvertToDataTable(LessonsDL.LessonDtls);
@@ -73,6 +74,7 @@ table.Columns.Add("ContentTypeID", typeof(int));
             cmd.Parameters.Add(GetParameter("@Title", LessonsDL.Title));
             cmd.Parameters.Add(GetParameter("@IsFree", LessonsDL.IsFree));
             cmd.Parameters.Add(GetParameter("@LessonOrder", LessonsDL.LessonOrder));
+            cmd.Parameters.Add(GetParameter("@LessonImagePath", LessonsDL.LessonImagePath));
 
 
             // تحويل الـ List ل DataTable وتمريره كـ Structured Parameter

@@ -27,48 +27,6 @@ namespace Menassah
         private readonly IMainHelper mainHelperRepo;
 
 
-        //[HttpPut]
-        //[Route("Update")]
-        //public ActionResult Update(UploadsDL  uploadsDL)
-        //{
-        //    GeneralResponse resonse;
-        //    try
-        //    {
-        //        string ID = _UploadsRepo.Update( uploadsDL);
-        //        if (ID == "0")
-        //        {
-        //            resonse = new GeneralResponse
-        //            {
-        //                ID = "0",
-        //                Message = "Can't Update Type",
-        //                Success = false
-        //            };
-
-        //            return BadRequest(resonse);
-
-        //        }
-        //        else
-        //        {
-        //            resonse = new GeneralResponse
-        //            {
-        //                ID = ID,
-        //                Message = "",
-        //                Success = true
-        //            };
-
-        //            return Ok(resonse);
-
-
-        //        }
-        //        //return 0;
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(mainHelperRepo.GetException(ex));
-        //    }
-        //}
-
 
         [HttpDelete]
         [Route("Delete/{UploadID}")]
@@ -197,23 +155,23 @@ namespace Menassah
                     });
                 }
 
-                string UploadPath = model.uploadType switch
+                string UploadPath = model.UploadType switch
                 {
                     // 🟢 لو Docs/Videos/Images => زي ما هي
                     "docs" or "videos" or "images" =>
-                        $"uploads/teachers/{model.teacherId}/groups/{model.groupId}/{model.uploadType}",
+                        $"uploads/teachers/{model.TeacherId}/groups/{model.GroupId}/Lessons/{model.LessonID}/{model.UploadType}",
 
                     // 🟢 لو Profile => يتحقق مين اللي موجود (Student ولا Teacher)
-                    "profile" when model.studentId > 0 =>
-                        $"uploads/students/{model.studentId}/{model.uploadType}",
+                    "profile" when model.StudentId > 0 =>
+                        $"uploads/students/{model.StudentId}/{model.UploadType}",
 
-                    "profile" when model.teacherId > 0 =>
-                        $"uploads/teachers/{model.teacherId}/{model.uploadType}",
+                    "profile" when model.TeacherId > 0 =>
+                        $"uploads/teachers/{model.TeacherId}/{model.UploadType}",
 
                     // 🟡 الحالة الافتراضية
-                    _ => model.studentId > 0
-                        ? $"uploads/students/{model.studentId}"
-                        : $"uploads/teachers/{model.teacherId}"
+                    _ => model.StudentId > 0
+                        ? $"uploads/students/{model.StudentId}"
+                        : $"uploads/teachers/{model.TeacherId}"
                 };
 
 
@@ -233,11 +191,12 @@ namespace Menassah
                 // جهز الكائن
                 var doc = new UploadsDL
                 {
-                    uploadType = model.uploadType,
-                    teacherId = model.teacherId,
-                    studentId = model.studentId,
-                    groupId = model.groupId,
-                    filePath = "/" + UploadPath + "/" + uniqueFileName
+                    UploadType = model.UploadType,
+                    TeacherId = model.TeacherId,
+                    StudentId = model.StudentId,
+                    GroupId = model.GroupId,
+                    LessonID = model.LessonID,
+                    FilePath = "/" + UploadPath + "/" + uniqueFileName
                 };
 
                 string ID = _UploadsRepo.Insert(doc);
