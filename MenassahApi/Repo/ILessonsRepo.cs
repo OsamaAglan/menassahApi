@@ -10,6 +10,7 @@ namespace MenassahApi.Repo
         public string Update(LessonsDL IM2OrdLessonsDLersDL);
         public string Delete(int LessonID);
         public DataSet GetByID(int LessonID);
+        public DataSet ContentTypeGetAll();
         public DataSet GetByGroupID(int LessonID);
 
 

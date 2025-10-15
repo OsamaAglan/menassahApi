@@ -140,6 +140,15 @@ table.Columns.Add("ContentTypeID", typeof(int));
             return ds;
 
         }
+        public DataSet ContentTypeGetAll()
+        {
+
+            SqlCommand cmd = GetCommand("spx_LessoneContentType_GetAll", CommandType.StoredProcedure);
+
+            var ds = GetDataSet(cmd, 999);
+            return ds;
+
+        }
 
 
         public DataSet GetByGroupID(int GroupID)
